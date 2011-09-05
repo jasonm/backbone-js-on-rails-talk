@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Introduction</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="file:///Library/Python/2.6/site-packages/landslide-1.0.0-py2.6.egg/landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="file:///Library/Python/2.6/site-packages/landslide-1.0.0-py2.6.egg/landslide/themes/default/css/screen.css">
+    
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="file:///Library/Python/2.6/site-packages/landslide-1.0.0-py2.6.egg/landslide/themes/default/js/slides.js"></script>
+    
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_notes">
+          <div class="inner">
+            
+            <header><h1>Introduction</h1></header>
+            
+            
+            <section><p class="notes">You are Rails developers, with some JS experience (reading, maybe some jQuery).</p>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Your Markdown source files must be suffixed by .md, .markdn, .mdown or .markdown</li>
+<li>To create a title slide, render a single h1 element (eg. # My Title)</li>
+<li>Separate your slides with a horizontal rule (--- in markdown) except at the end of md files</li>
+<li>Your other slides should have a heading that renders to an h1 element</li>
+<li>To highlight blocks of code, put !{lang} where {lang} is the pygment supported language identifier as the first indented lin</li>
+<li>https://github.com/adamzap/landslide</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/3
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_notes">
+          <div class="inner">
+            
+            <header><h1>My Goal</h1></header>
+            
+            
+            <section><p class="notes">Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Rails + Backbone integration</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/3
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            
+            <section><ul>
+<li>what is backbone
+<strong> clientside mvc, what, why
+</strong> framework advantages: organization.  encourages modularity =&gt; testability, reuse.</li>
+<li>
+<p>moving parts: model, collection, view, router, history (high level)</p>
+</li>
+<li>
+<p>other frameworks, compare/contrast
+<strong> sc2. less docu, strobe platform, more libs (what are they?)
+</strong> spine. extremely similar to backbone.  smaller community.
+** knockout, mvvm.</p>
+</li>
+<li>describe each component</li>
+<li>
+<p>show an example</p>
+</li>
+<li>
+<p>code tour: client side.  back to front.
+<strong> routing
+</strong> view class
+<strong> models and collections
+</strong> templating
+** underscore.js.  Mixed into collections.</p>
+</li>
+<li>
+<p>code tour: server side.  rails integration.  back to front.
+<strong> file organization
+</strong> JSON APIs
+<strong><em> activerecord to_json
+</em></strong> Model#as_json/presenter/rabl/etc
+<strong>* controller params in 3.1
+</strong> asset pipeline in 3.1 (or packager in 3.0)</p>
+</li>
+<li>
+<p>more advanced topics
+<strong> pushState for history.  look at github.  opt-in.  server-side support.
+</strong> testing
+<strong><em> selenium integration testing.  capybara-webkit.
+</em></strong> jasmine for isolation testing.
+**** fixture html</p>
+</li>
+<li>
+<p>further reading
+<strong> non-rails backends: remote JSON APIs, localstorage, websocket sync, XML
+</strong> offline apps. html5 offline app manifest?  any plugins?
+<strong> websockets
+</strong> backbone on the server with node.js, now.js
+** bone up on JS: short: good parts.  long: tddjs.</p>
+</li>
+<li>
+<p>wrapup
+<strong> slides url
+</strong> backbone google group
+<strong> backbone on rails ebook
+</strong> peepcode videos
+** my contact info</p>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/3
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Introduction</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">My Goal</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>
