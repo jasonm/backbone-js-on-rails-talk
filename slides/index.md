@@ -65,21 +65,22 @@ notes: Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Ra
 
 * file organization
 * JSON APIs
-** activerecord to_json
-** Model#as_json/presenter/rabl/etc
-** controller params in 3.1
+    * activerecord to_json
+    * Model#as_json/presenter/rabl/etc
+    * controller params in 3.1
 * asset pipeline in 3.1 (or packager in 3.0)
 
 ---
 # more advanced topics
 * pushState for history.  look at github.  opt-in.  server-side support.
 * testing
-** selenium integration testing.  capybara-webkit.
-** jasmine for isolation testing.
-*** fixture html
+    * selenium integration testing.  capybara-webkit.
+    * jasmine for isolation testing.
+        * fixture html
 
 ---
 # further reading
+
 * non-rails backends: remote JSON APIs, localstorage, websocket sync, XML
 * offline apps. html5 offline app manifest?  any plugins?
 * websockets
@@ -89,8 +90,14 @@ notes: Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Ra
 ---
 # wrapup
 
-* slides url
-* backbone google group
-* backbone on rails ebook
-* peepcode videos
-* my contact info
+* Slides
+    * http://jayunit.net/backbone-js-on-rails-talk
+* Backbone Google Group
+    * https://groups.google.com/group/backbonejs
+* Backbone on Rails eBook
+    * http://workshops.thoughtbot.com/backbone-js-on-rails
+* Peepcode episodes on Backbone
+    * http://peepcode.com/products/backbone-js
+* Me
+    * jason.p.morrison@gmail.com
+    * http://jayunit.net
