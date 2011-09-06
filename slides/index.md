@@ -52,26 +52,28 @@ notes: Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Ra
 * ...
 
 ---
-# code tour: client side.  back to front.
+# Code tour: client side
 
-* routing
-* view class
-* models and collections
-* templating
-* underscore.js.  Mixed into collections.
-
----
-# code tour: server side.  rails integration.  back to front.
-
-* file organization
-* JSON APIs
-    * activerecord to_json
-    * Model#as_json/presenter/rabl/etc
-    * controller params in 3.1
-* asset pipeline in 3.1 (or packager in 3.0)
+* back to front.
+    * routing
+    * view class
+    * models and collections
+    * templating
+    * underscore.js.  Mixed into collections.
 
 ---
-# more advanced topics
+# Code tour: server side
+
+* rails integration.  back to front.
+    * file organization
+    * JSON APIs
+        * activerecord to_json
+        * Model#as_json/presenter/rabl/etc
+        * controller params in 3.1
+    * asset pipeline in 3.1 (or packager in 3.0)
+
+---
+# More advanced topics
 * pushState for history.  look at github.  opt-in.  server-side support.
 * testing
     * selenium integration testing.  capybara-webkit.
@@ -79,7 +81,7 @@ notes: Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Ra
         * fixture html
 
 ---
-# further reading
+# Further reading
 
 * non-rails backends: remote JSON APIs, localstorage, websocket sync, XML
 * offline apps. html5 offline app manifest?  any plugins?
@@ -88,16 +90,11 @@ notes: Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Ra
 * bone up on JS: short: good parts.  long: tddjs.
 
 ---
-# wrapup
+# Links
 
-* Slides
-    * http://jayunit.net/backbone-js-on-rails-talk
-* Backbone Google Group
-    * https://groups.google.com/group/backbonejs
-* Backbone on Rails eBook
-    * http://workshops.thoughtbot.com/backbone-js-on-rails
-* Peepcode episodes on Backbone
-    * http://peepcode.com/products/backbone-js
-* Me
-    * jason.p.morrison@gmail.com
-    * http://jayunit.net
+* [These slides](http://jayunit.net/backbone-js-on-rails-talk)
+* [Backbone Google Group](https://groups.google.com/group/backbonejs)
+* [Backbone on Rails eBook by thoughtbot](http://workshops.thoughtbot.com/backbone-js-on-rails)
+* [Peepcode episodes on Backbone](http://peepcode.com/products/backbone-js)
+* [jason.p.morrison@gmail.com](mailto:jason.p.morrison@gmail.com)
+* [http://jayunit.net](http://jayunit.net)
