@@ -20,3 +20,7 @@
 Push to the gh-pages branch:
 
     git push -f origin gh-pages
+
+## View
+
+http://jayunit.net/backbone-js-on-rails-talk/
