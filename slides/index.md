@@ -12,6 +12,11 @@
 * https://github.com/adamzap/landslide
 
 ---
+# Tell them what youre going to tell tem
+* and reiterate a few times, probably.
+* especially before "moving parts" and "walk through a request"
+
+---
 
 # My Goal
 
@@ -49,7 +54,30 @@ notes: Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Ra
 
 ---
 # show an example
-* ...
+* book store, amazon like?
+
+---
+
+# walk through a request
+* GET /#books/5
+* browser http request to rails
+* rails router, controller, model, view
+* response
+** htmls
+** javascripts tags
+** json to be bootstrappin the datas
+* browser fetches the javascripts
+* initialize backbone
+** bootstrap collections
+** instantiate router
+** .start()
+* send hash '#books/5' to backbone router
+* router routes, dispatches to action
+* action
+* view(modelOrCollection)
+* view calls template, returns htmls
+* view calls the jquery
+* dom is updated
 
 ---
 # Code tour: client side
