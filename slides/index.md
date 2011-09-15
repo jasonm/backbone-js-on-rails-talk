@@ -17,6 +17,13 @@
 * especially before "moving parts" and "walk through a request"
 
 ---
+# Backbone.js and Rails:
+
+These days, some web apps have more code on the client than on the server.
+Learn how Backbone.js is put together, how to use it with Rails, and how to
+make building JavaScript-heavy apps a pleasure.
+
+---
 
 # My Goal
 
@@ -54,12 +61,12 @@ notes: Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Ra
 
 ---
 # show an example
-* book store, amazon like?
+* trajectory
 
 ---
 
 # walk through a request
-* GET /#books/5
+* GET /accounts/thoughtbot/projects/opensource/stories#84245
 * browser http request to rails
 * rails router, controller, model, view
 * response
@@ -69,9 +76,9 @@ notes: Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Ra
 * browser fetches the javascripts
 * initialize backbone
 ** bootstrap collections
-** instantiate router
+** instantiate router (Stories or Discussions)
 ** .start()
-* send hash '#books/5' to backbone router
+* send hash '#84245' to backbone router
 * router routes, dispatches to action
 * action
 * view(modelOrCollection)
@@ -111,6 +118,7 @@ notes: Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Ra
 ---
 # Further reading
 
+* todo app, simple to get started
 * non-rails backends: remote JSON APIs, localstorage, websocket sync, XML
 * offline apps. html5 offline app manifest?  any plugins?
 * websockets
