@@ -1,71 +1,101 @@
-# Introduction
+---
+# Backbone.js on Rails
 
-.notes: You are Rails developers, with some JS experience (reading, maybe some jQuery).
+---
+# Goals for this talk
+
 
 # Presenter Notes
-
-* Your Markdown source files must be suffixed by .md, .markdn, .mdown or .markdown
-* To create a title slide, render a single h1 element (eg. # My Title)
-* Separate your slides with a horizontal rule (--- in markdown) except at the end of md files
-* Your other slides should have a heading that renders to an h1 element
-* To highlight blocks of code, put !{lang} where {lang} is the pygment supported language identifier as the first indented lin
-* https://github.com/adamzap/landslide
+## After this talk, you will:
+* Know why and how to use a client-side framework
+* Be able to read up on a few of them
+* Be able to follow along with Backbone tutorials
+* Know how to add Backbone to a new or existing Rails app
 
 ---
-# Tell them what youre going to tell tem
-* and reiterate a few times, probably.
-* especially before "moving parts" and "walk through a request"
+# More client side
 
----
-# Backbone.js and Rails:
+# Presenter Notes
 
 These days, some web apps have more code on the client than on the server.
-Learn how Backbone.js is put together, how to use it with Rails, and how to
-make building JavaScript-heavy apps a pleasure.
+
+Learn how Backbone.js is put together, how to use it with Rails, and how to make building JavaScript-heavy apps a pleasure.
+
+How much JS?
+
+* Airbrake: Almost 0
+* Copycopter: 30%
+* Trajectory 41%
+* IoraHealth: 62%
+* Substance.io: 100%
 
 ---
-
-# My Goal
-
-* ...
+# Organize your code
 
 # Presenter Notes
 
-notes: Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Rails + Backbone integration
+* Hands up: Procedural apps? Tag-soup PHP/JSP/whatever-SP?  Now, framework?
+* Patterns for organization.  MVC is one.  Good for GUI.
+* MVC over HTTP is often stateless.  Some state maintained with session
+* MVC in GUI is stateful.  Embrace this.
+
+---
+# But which one?
+
+* Cappuccino
+* SproutCore (1.x, 2.x)
+* Knockout.js
+* JavaScriptMVC
+* Spine.js
+* Backbone.js
+* Angular, Coherent, PureMVC-js,  AFrameJS, TrimPath Junction, ...
+
+# Presenter Notes
+
+* [Decision Fatigue NY Times Mag article](http://www.nytimes.com/2011/08/21/magazine/do-you-suffer-from-decision-fatigue.html)
+* Cappuccino/SproutCore: UI controls.  Desktop like.
+* SC2: Similar, larger.  Less doc.  Declarative bindings, even in templates.
+* Knockout: MVVM.  WCF, Silverlight.
+* JavaScriptMVC: Larger, older, generators, dep mgmt, builds, testing, jQuery-based-and-like, JSON/REST transport
+* Spine.js: Very similar.  Even smaller.  Coffee.  Fully async, client rules.
+* Backbone: Small, pragmatic, extracted from DocumentCloud
 
 ---
 
-# what is backbone
+# Moving parts
 
-* clientside mvc, what, why
-* framework advantages: organization.  encourages modularity => testability, reuse.
+* History
+* Router
+* View
+* Model
+* Collection
+* Sync
+* Underscore
+* $
+
+# Presenter Notes
+
+* History - Handles hashchange, pushstate, BB.history.start()
+* Router - read fragment, dispatch to action
+* View - Root DOM `el`, class/id/tagName, `this.$`, `events`, `$.delegate`, any templating
+* Model - Conversions, computed properties, validations, access control, events change/change:attr,destroy,error
+* Collection - Ordered set of models.  URL, fetch(), reset(json), _.methods, comparator, events reset/add/remove/all model events
+* Sync - Encapsulation of persistence. Default `$.ajax` to RESTful JSON API.  Designed for override, global or per-class.
+* Underscore -  FP (select, reduce), bind, template, deep isEqual, clone, tap
+* $ - jQuery || Zepto
+
+
+---
+# Example
 
 ---
 
-# moving parts
+# Walk through a request
 
-*  model, collection, view, router, history (high level)
+* GET
 
----
+# Presenter Notes
 
-# other frameworks, compare/contrast
-
-* sc2. less docu, strobe platform, more libs (what are they?)
-* spine. extremely similar to backbone.  smaller community.
-* knockout, mvvm.
-
----
-# describe each component
-
-* ...
-
----
-# show an example
-* trajectory
-
----
-
-# walk through a request
 * GET /accounts/thoughtbot/projects/opensource/stories#84245
 * browser http request to rails
 * rails router, controller, model, view
@@ -105,7 +135,7 @@ notes: Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Ra
         * activerecord to_json
         * Model#as_json/presenter/rabl/etc
         * controller params in 3.1
-    * asset pipeline in 3.1 (or packager in 3.0)
+    * asset pipeline
 
 ---
 # More advanced topics
@@ -114,6 +144,7 @@ notes: Motivate and discuss client-side MVC.   Introduce Backbone.js  Discuss Ra
     * selenium integration testing.  capybara-webkit.
     * jasmine for isolation testing.
         * fixture html
+
 
 ---
 # Further reading
