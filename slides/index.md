@@ -1,11 +1,10 @@
----
 # Backbone.js on Rails
 
 ---
 # Goals for this talk
 
-
 # Presenter Notes
+
 ## After this talk, you will:
 * Know why and how to use a client-side framework
 * Be able to read up on a few of them
@@ -13,7 +12,7 @@
 * Know how to add Backbone to a new or existing Rails app
 
 ---
-# More client side
+# Apps shifting client-side
 
 # Presenter Notes
 
@@ -30,7 +29,7 @@ How much JS?
 * Substance.io: 100%
 
 ---
-# Organize your code
+# Organize your JavaScript
 
 # Presenter Notes
 
@@ -40,11 +39,12 @@ How much JS?
 * MVC in GUI is stateful.  Embrace this.
 
 ---
-# But which one?
+# But which framework?
 
 * Cappuccino
 * SproutCore (1.x, 2.x)
 * Knockout.js
+* Batman.js
 * JavaScriptMVC
 * Spine.js
 * Backbone.js
@@ -56,6 +56,7 @@ How much JS?
 * Cappuccino/SproutCore: UI controls.  Desktop like.
 * SC2: Similar, larger.  Less doc.  Declarative bindings, even in templates.
 * Knockout: MVVM.  WCF, Silverlight.
+* Batman: Node server, share models, data-bind templates
 * JavaScriptMVC: Larger, older, generators, dep mgmt, builds, testing, jQuery-based-and-like, JSON/REST transport
 * Spine.js: Very similar.  Even smaller.  Coffee.  Fully async, client rules.
 * Backbone: Small, pragmatic, extracted from DocumentCloud
@@ -88,80 +89,167 @@ How much JS?
 ---
 # Example
 
----
-
-# Walk through a request
-
-* GET
-
 # Presenter Notes
 
-* GET /accounts/thoughtbot/projects/opensource/stories#84245
-* browser http request to rails
-* rails router, controller, model, view
-* response
-** htmls
-** javascripts tags
-** json to be bootstrappin the datas
-* browser fetches the javascripts
-* initialize backbone
-** bootstrap collections
-** instantiate router (Stories or Discussions)
-** .start()
-* send hash '#84245' to backbone router
-* router routes, dispatches to action
-* action
-* view(modelOrCollection)
-* view calls template, returns htmls
-* view calls the jquery
-* dom is updated
+* Trajectory on local
+* stories#index
+
+---
+# Walk through a request
+
+* URI: `/projects/oss/stories#84245`
+* `GET /projects/oss/stories`
+* Rails response: HTML, `<script>`s, JSON
+
+---
+# Walk through a request
+
+* Bootstrap collections
+* Instantiate router
+* `Backbone.history.start()`
+
+---
+# Walk through a request
+
+* Route `'#84245'` fragment
+* Dispatch to action
+* `new View(modelOrCollection)`
+* event and data bindings
+* `view.render()`
+* `_.template()`
+* `$('#app').html(theViewHtmls)`
 
 ---
 # Code tour: client side
 
-* back to front.
-    * routing
-    * view class
-    * models and collections
-    * templating
-    * underscore.js.  Mixed into collections.
+# Presenter Notes
+
+* Back to front.
+    * Script load
+    * JSON collection bootstrapping
+    * Init -> Backbone.history.start()
+    * Routing
+    * View class
+    * Models and collections
+    * Templating
+    * Underscore.js.  Mixed into collections.
 
 ---
 # Code tour: server side
 
-* rails integration.  back to front.
-    * file organization
+# Presenter Notes
+
+* Rails integration.  Back to front.
+    * File organization for 3.0: JS, JST, Jammit
+    * File organization for 3.1: Asset pipeline, [`rails-backbone` gem](https://github.com/codebrew/backbone-rails)
     * JSON APIs
-        * activerecord to_json
-        * Model#as_json/presenter/rabl/etc
-        * controller params in 3.1
-    * asset pipeline
+        * [`ActiveRecord.include_root_in_json`](https://github.com/jasonm/wizards/blob/master/config/initializers/wrap_parameters.rb)
+        * Rails 3.1 [Params Wrapper](https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/params_wrapper.rb)
+        * Model#as_json probably isnt the best place for presentation: Presenter object, [rabl](https://github.com/nesquena/rabl)
+    * [CSRF Token](https://github.com/codebrew/backbone-rails/blob/master/vendor/assets/javascripts/backbone_rails_sync.js#L26-27)
 
 ---
-# More advanced topics
-* pushState for history.  look at github.  opt-in.  server-side support.
-* testing
-    * selenium integration testing.  capybara-webkit.
-    * jasmine for isolation testing.
-        * fixture html
+# Bonus stuff!
 
+# Presenter Notes
 
----
-# Further reading
-
-* todo app, simple to get started
-* non-rails backends: remote JSON APIs, localstorage, websocket sync, XML
-* offline apps. html5 offline app manifest?  any plugins?
-* websockets
-* backbone on the server with node.js, now.js
-* bone up on JS: short: good parts.  long: tddjs.
+* What is left?
+    * Testing
+    * pushState
+    * push sync (WebSocket)
 
 ---
-# Links
+# Testing
 
-* [These slides](http://jayunit.net/backbone-js-on-rails-talk)
+--- 
+# Testing
+* It's just JavaScript!
+# Presenter Notes
+* Yes it's just JavaScript.
+* But...
+
+--- 
+# Testing
+* It's just **stateful and asynchronous business and presentation logic written in** JavaScript!
+# Presenter Notes
+* Luckily...
+
+--- 
+# Testing
+* It's just stateful and asynchronous business and presentation logic written in **modular, decoupled** JavaScript!
+
+---
+# Testing
+* Isolation: Jasmine
+* Integration: capybara-webkit, selenium
+
+# Presenter Notes
+
+* [Jasmine](http://pivotal.github.com/jasmine/) goodies!  Get these.
+    * Spy/stub/mock, even your HTTP, with [sinon.js](http://sinonjs.org/)
+    * If you're looking for factory_girl.js, it's called [Rosie](https://github.com/bkeepers/rosie)
+    * [guard-jasmine](https://github.com/netzpirat/guard-jasmine) autotest your Jasmine with headless webkit ([phantomjs](http://www.phantomjs.org/))
+    * Write in CoffeeScript and use the 3.1 asset pipeline with [jasminerice](https://github.com/bradphelan/jasminerice)
+    * Get started with James Newbery's excellent blog posts on [testing Backbone with Jasmine](http://tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html)
+    * Check out his [examples on GitHub](https://github.com/froots/backbone-jasmine-examples)
+* Integration test with:
+    * [capybara-webkit](https://github.com/thoughtbot/capybara-webkit) for fast, headless, accurate WebKit testing
+    * Selenium for other browsers, or if capybara-webkit has issues.
+
+---
+# pushState
+
+# Presenter Notes
+
+* Look at github.
+* Opt-in.
+* `Backbone.history.start({pushState: true});`
+* Server-side support.
+
+---
+# Push synchronization
+
+# Presenter Notes
+
+* Rails `Model#save` cascades to clients: [backbone_sync-rails](https://github.com/jasonm/backbone_sync-rails) over pubsub bus [Faye](http://faye.jcoglan.com/)
+* Work-in-progress [Software transactional memory](http://en.wikipedia.org/wiki/Software_transactional_memory) sync: [https://github.com/codeparty/racer](https://github.com/codeparty/racer)
+    * Future plans: [diff-match-patch](http://code.google.com/p/google-diff-match-patch/), [Operational transform](http://en.wikipedia.org/wiki/Operational_transformation)
+* [Now.js](http://nowjs.org/)
+* [Substack DNode](https://github.com/substack/dnode)
+* [Data.js](http://substance.io/michael/data-js): Data Manipulation and Graph Persistence for Node.js and the Browser.  Can ride now.js transport.
+    * substance.io, above, is written with Backbone.js, and is open source [https://github.com/michael/substance](https://github.com/michael/substance)
+* [Backbone on the server with node.js](http://andyet.net/blog/2011/feb/15/re-using-backbonejs-models-on-the-server-with-node/)... with DNode or NowJS (?!)
+
+---
+# Get your code on
+
+* [Todo App example](http://documentcloud.github.com/backbone/#examples-todos)
+* [James Newbery's jasmine examples](https://github.com/froots/backbone-jasmine-examples/tree/master/public/javascripts)
+
+---
+# Further reading: Books on JavaScript
+
+* [JavaScript: The Good Parts](http://shop.oreilly.com/product/9780596517748.do) by Douglas Crockford
+* [JavaScript Web Applications](http://shop.oreilly.com/product/0636920018421.do) by Alex MacCaw (Spine.js author)
+* [Test-Driven JavaScript Development](http://tddjs.com/) by Christian Johansen
+* [JavaScript Patterns](http://shop.oreilly.com/product/9780596806767.do) by Stoyan Stefanov
+* [JavaScript: The Definitive Guide](http://shop.oreilly.com/product/9780596805531.do) by David Flanagan
+
+---
+# Further reading: Online resources
+
+* [Official Backbone docs](http://documentcloud.github.com/backbone/) - they're excellent!
 * [Backbone Google Group](https://groups.google.com/group/backbonejs)
-* [Backbone on Rails eBook by thoughtbot](http://workshops.thoughtbot.com/backbone-js-on-rails)
+* [Backbone on Rails eBook](http://workshops.thoughtbot.com/backbone-js-on-rails)
 * [Peepcode episodes on Backbone](http://peepcode.com/products/backbone-js)
-* [jason.p.morrison@gmail.com](mailto:jason.p.morrison@gmail.com)
-* [http://jayunit.net](http://jayunit.net)
+
+---
+# Thanks!
+
+* Me:
+    * [jason.p.morrison@gmail.com](mailto:jason.p.morrison@gmail.com)
+    * [@jayunit](http://twitter.com/jayunit)
+    * [http://jayunit.net](http://jayunit.net)
+* Slides:
+    * [View slides online](http://jayunit.net/backbone-js-on-rails-talk)
+    * [View slides source on GitHub](http://github.com/jasonm/backbone-js-on-rails-talk)

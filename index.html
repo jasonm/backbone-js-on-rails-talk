@@ -25,7 +25,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Untitled Presentation</title>
+    <title>Backbone.js on Rails</title>
     <!-- Styles -->
     
     <style type="text/css" media="print">
@@ -1266,28 +1266,6 @@ body.presenter_view div#current_presenter_notes section {
     </div>
     <div class="slides">
       
-      <!-- slide source:  -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="page_number">
-              /13
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
       <!-- slide source: slides/index.md -->
       <div class="slide-wrapper">
         <div class="slide">
@@ -1310,7 +1288,7 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              1/13
+              1/24
             </aside>
           </footer>
         </div>
@@ -1346,7 +1324,7 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              2/13
+              2/24
             </aside>
           </footer>
         </div>
@@ -1357,7 +1335,7 @@ body.presenter_view div#current_presenter_notes section {
         <div class="slide">
           <div class="inner">
             
-            <header><h1>More client side</h1></header>
+            <header><h1>Apps shifting client-side</h1></header>
             
             
           </div>
@@ -1385,7 +1363,7 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              3/13
+              3/24
             </aside>
           </footer>
         </div>
@@ -1396,7 +1374,7 @@ body.presenter_view div#current_presenter_notes section {
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Organize your code</h1></header>
+            <header><h1>Organize your JavaScript</h1></header>
             
             
           </div>
@@ -1420,7 +1398,7 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              4/13
+              4/24
             </aside>
           </footer>
         </div>
@@ -1431,13 +1409,14 @@ body.presenter_view div#current_presenter_notes section {
         <div class="slide">
           <div class="inner">
             
-            <header><h1>But which one?</h1></header>
+            <header><h1>But which framework?</h1></header>
             
             
             <section><ul>
 <li>Cappuccino</li>
 <li>SproutCore (1.x, 2.x)</li>
 <li>Knockout.js</li>
+<li>Batman.js</li>
 <li>JavaScriptMVC</li>
 <li>Spine.js</li>
 <li>Backbone.js</li>
@@ -1455,6 +1434,7 @@ body.presenter_view div#current_presenter_notes section {
 <li>Cappuccino/SproutCore: UI controls.  Desktop like.</li>
 <li>SC2: Similar, larger.  Less doc.  Declarative bindings, even in templates.</li>
 <li>Knockout: MVVM.  WCF, Silverlight.</li>
+<li>Batman: Node server, share models, data-bind templates</li>
 <li>JavaScriptMVC: Larger, older, generators, dep mgmt, builds, testing, jQuery-based-and-like, JSON/REST transport</li>
 <li>Spine.js: Very similar.  Even smaller.  Coffee.  Fully async, client rules.</li>
 <li>Backbone: Small, pragmatic, extracted from DocumentCloud</li>
@@ -1469,7 +1449,7 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              5/13
+              5/24
             </aside>
           </footer>
         </div>
@@ -1520,7 +1500,7 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              6/13
+              6/24
             </aside>
           </footer>
         </div>
@@ -1539,6 +1519,11 @@ body.presenter_view div#current_presenter_notes section {
             <header><h1>Presenter Notes</h1></header>
             <section>
             
+              <ul>
+<li>Trajectory on local</li>
+<li>stories#index</li>
+</ul>
+            
             </section>
           </div>
           <footer>
@@ -1548,7 +1533,7 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              7/13
+              7/24
             </aside>
           </footer>
         </div>
@@ -1563,36 +1548,15 @@ body.presenter_view div#current_presenter_notes section {
             
             
             <section><ul>
-<li>GET</li>
-</ul>
-</section>
+<li>URI: <code>/projects/oss/stories#84245</code></li>
+<li><code>GET /projects/oss/stories</code></li>
+<li>Rails response: HTML, <code>&lt;script&gt;</code>s, JSON</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
             <header><h1>Presenter Notes</h1></header>
             <section>
-            
-              <ul>
-<li>GET /accounts/thoughtbot/projects/opensource/stories#84245</li>
-<li>browser http request to rails</li>
-<li>rails router, controller, model, view</li>
-<li>response
-<strong> htmls
-</strong> javascripts tags
-** json to be bootstrappin the datas</li>
-<li>browser fetches the javascripts</li>
-<li>initialize backbone
-<strong> bootstrap collections
-</strong> instantiate router (Stories or Discussions)
-** .start()</li>
-<li>send hash '#84245' to backbone router</li>
-<li>router routes, dispatches to action</li>
-<li>action</li>
-<li>view(modelOrCollection)</li>
-<li>view calls template, returns htmls</li>
-<li>view calls the jquery</li>
-<li>dom is updated</li>
-</ul>
             
             </section>
           </div>
@@ -1603,7 +1567,79 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              8/13
+              8/24
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Walk through a request</h1></header>
+            
+            
+            <section><ul>
+<li>Bootstrap collections</li>
+<li>Instantiate router</li>
+<li><code>Backbone.history.start()</code></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/24
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Walk through a request</h1></header>
+            
+            
+            <section><ul>
+<li>Route <code>'#84245'</code> fragment</li>
+<li>Dispatch to action</li>
+<li><code>new View(modelOrCollection)</code></li>
+<li>event and data bindings</li>
+<li><code>view.render()</code></li>
+<li><code>_.template()</code></li>
+<li><code>$('#app').html(theViewHtmls)</code></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/24
             </aside>
           </footer>
         </div>
@@ -1617,21 +1653,24 @@ body.presenter_view div#current_presenter_notes section {
             <header><h1>Code tour: client side</h1></header>
             
             
-            <section><ul>
-<li>back to front.<ul>
-<li>routing</li>
-<li>view class</li>
-<li>models and collections</li>
-<li>templating</li>
-<li>underscore.js.  Mixed into collections.</li>
-</ul>
-</li>
-</ul></section>
-            
           </div>
           <div class="presenter_notes">
             <header><h1>Presenter Notes</h1></header>
             <section>
+            
+              <ul>
+<li>Back to front.<ul>
+<li>Script load</li>
+<li>JSON collection bootstrapping</li>
+<li>Init -&gt; Backbone.history.start()</li>
+<li>Routing</li>
+<li>View class</li>
+<li>Models and collections</li>
+<li>Templating</li>
+<li>Underscore.js.  Mixed into collections.</li>
+</ul>
+</li>
+</ul>
             
             </section>
           </div>
@@ -1642,7 +1681,7 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              9/13
+              11/24
             </aside>
           </footer>
         </div>
@@ -1656,18 +1695,191 @@ body.presenter_view div#current_presenter_notes section {
             <header><h1>Code tour: server side</h1></header>
             
             
-            <section><ul>
-<li>rails integration.  back to front.<ul>
-<li>file organization</li>
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Rails integration.  Back to front.<ul>
+<li>File organization for 3.0: JS, JST, Jammit</li>
+<li>File organization for 3.1: Asset pipeline, <a href="https://github.com/codebrew/backbone-rails"><code>rails-backbone</code> gem</a></li>
 <li>JSON APIs<ul>
-<li>activerecord to_json</li>
-<li>Model#as_json/presenter/rabl/etc</li>
-<li>controller params in 3.1</li>
+<li><a href="https://github.com/jasonm/wizards/blob/master/config/initializers/wrap_parameters.rb"><code>ActiveRecord.include_root_in_json</code></a></li>
+<li>Rails 3.1 <a href="https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/params_wrapper.rb">Params Wrapper</a></li>
+<li>Model#as_json probably isnt the best place for presentation: Presenter object, <a href="https://github.com/nesquena/rabl">rabl</a></li>
 </ul>
 </li>
-<li>asset pipeline</li>
+<li><a href="https://github.com/codebrew/backbone-rails/blob/master/vendor/assets/javascripts/backbone_rails_sync.js#L26-27">CSRF Token</a></li>
 </ul>
 </li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/24
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Bonus stuff!</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>What is left?<ul>
+<li>Testing</li>
+<li>pushState</li>
+<li>push sync (WebSocket)</li>
+</ul>
+</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/24
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Testing</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/24
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Testing</h1></header>
+            
+            
+            <section><ul>
+<li>It's just JavaScript!</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Yes it's just JavaScript.</li>
+<li>But...</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/24
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Testing</h1></header>
+            
+            
+            <section><ul>
+<li>It's just <strong>stateful and asynchronous business and presentation logic written in</strong> JavaScript!</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Luckily...</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/24
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Testing</h1></header>
+            
+            
+            <section><ul>
+<li>It's just stateful and asynchronous business and presentation logic written in <strong>modular, decoupled</strong> JavaScript!</li>
 </ul></section>
             
           </div>
@@ -1684,7 +1896,7 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              10/13
+              17/24
             </aside>
           </footer>
         </div>
@@ -1695,19 +1907,141 @@ body.presenter_view div#current_presenter_notes section {
         <div class="slide">
           <div class="inner">
             
-            <header><h1>More advanced topics</h1></header>
+            <header><h1>Testing</h1></header>
             
             
             <section><ul>
-<li>pushState for history.  look at github.  opt-in.  server-side support.</li>
-<li>testing<ul>
-<li>selenium integration testing.  capybara-webkit.</li>
-<li>jasmine for isolation testing.<ul>
-<li>fixture html</li>
+<li>Isolation: Jasmine</li>
+<li>Integration: capybara-webkit, selenium</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li><a href="http://pivotal.github.com/jasmine/">Jasmine</a> goodies!  Get these.<ul>
+<li>Spy/stub/mock, even your HTTP, with <a href="http://sinonjs.org/">sinon.js</a></li>
+<li>If you're looking for factory_girl.js, it's called <a href="https://github.com/bkeepers/rosie">Rosie</a></li>
+<li><a href="https://github.com/netzpirat/guard-jasmine">guard-jasmine</a> autotest your Jasmine with headless webkit (<a href="http://www.phantomjs.org/">phantomjs</a>)</li>
+<li>Write in CoffeeScript and use the 3.1 asset pipeline with <a href="https://github.com/bradphelan/jasminerice">jasminerice</a></li>
+<li>Get started with James Newbery's excellent blog posts on <a href="http://tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">testing Backbone with Jasmine</a></li>
+<li>Check out his <a href="https://github.com/froots/backbone-jasmine-examples">examples on GitHub</a></li>
+</ul>
+</li>
+<li>Integration test with:<ul>
+<li><a href="https://github.com/thoughtbot/capybara-webkit">capybara-webkit</a> for fast, headless, accurate WebKit testing</li>
+<li>Selenium for other browsers, or if capybara-webkit has issues.</li>
 </ul>
 </li>
 </ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/24
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>pushState</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Look at github.</li>
+<li>Opt-in.</li>
+<li><code>Backbone.history.start({pushState: true});</code></li>
+<li>Server-side support.</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/24
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Push synchronization</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Rails <code>Model#save</code> cascades to clients: <a href="https://github.com/jasonm/backbone_sync-rails">backbone_sync-rails</a> over pubsub bus <a href="http://faye.jcoglan.com/">Faye</a></li>
+<li>Work-in-progress <a href="http://en.wikipedia.org/wiki/Software_transactional_memory">Software transactional memory</a> sync: <a href="https://github.com/codeparty/racer">https://github.com/codeparty/racer</a><ul>
+<li>Future plans: <a href="http://code.google.com/p/google-diff-match-patch/">diff-match-patch</a>, <a href="http://en.wikipedia.org/wiki/Operational_transformation">Operational transform</a></li>
+</ul>
 </li>
+<li><a href="http://nowjs.org/">Now.js</a></li>
+<li><a href="https://github.com/substack/dnode">Substack DNode</a></li>
+<li><a href="http://substance.io/michael/data-js">Data.js</a>: Data Manipulation and Graph Persistence for Node.js and the Browser.  Can ride now.js transport.<ul>
+<li>substance.io, above, is written with Backbone.js, and is open source <a href="https://github.com/michael/substance">https://github.com/michael/substance</a></li>
+</ul>
+</li>
+<li><a href="http://andyet.net/blog/2011/feb/15/re-using-backbonejs-models-on-the-server-with-node/">Backbone on the server with node.js</a>... with DNode or NowJS (?!)</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/24
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Get your code on</h1></header>
+            
+            
+            <section><ul>
+<li><a href="http://documentcloud.github.com/backbone/#examples-todos">Todo App example</a></li>
+<li><a href="https://github.com/froots/backbone-jasmine-examples/tree/master/public/javascripts">James Newbery's jasmine examples</a></li>
 </ul></section>
             
           </div>
@@ -1724,7 +2058,7 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              11/13
+              21/24
             </aside>
           </footer>
         </div>
@@ -1735,16 +2069,15 @@ body.presenter_view div#current_presenter_notes section {
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Further reading</h1></header>
+            <header><h1>Further reading: Books on JavaScript</h1></header>
             
             
             <section><ul>
-<li>todo app, simple to get started</li>
-<li>non-rails backends: remote JSON APIs, localstorage, websocket sync, XML</li>
-<li>offline apps. html5 offline app manifest?  any plugins?</li>
-<li>websockets</li>
-<li>backbone on the server with node.js, now.js</li>
-<li>bone up on JS: short: good parts.  long: tddjs.</li>
+<li><a href="http://shop.oreilly.com/product/9780596517748.do">JavaScript: The Good Parts</a> by Douglas Crockford</li>
+<li><a href="http://shop.oreilly.com/product/0636920018421.do">JavaScript Web Applications</a> by Alex MacCaw (Spine.js author)</li>
+<li><a href="http://tddjs.com/">Test-Driven JavaScript Development</a> by Christian Johansen</li>
+<li><a href="http://shop.oreilly.com/product/9780596806767.do">JavaScript Patterns</a> by Stoyan Stefanov</li>
+<li><a href="http://shop.oreilly.com/product/9780596805531.do">JavaScript: The Definitive Guide</a> by David Flanagan</li>
 </ul></section>
             
           </div>
@@ -1761,7 +2094,7 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              12/13
+              22/24
             </aside>
           </footer>
         </div>
@@ -1772,16 +2105,14 @@ body.presenter_view div#current_presenter_notes section {
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Links</h1></header>
+            <header><h1>Further reading: Online resources</h1></header>
             
             
             <section><ul>
-<li><a href="http://jayunit.net/backbone-js-on-rails-talk">These slides</a></li>
+<li><a href="http://documentcloud.github.com/backbone/">Official Backbone docs</a> - they're excellent!</li>
 <li><a href="https://groups.google.com/group/backbonejs">Backbone Google Group</a></li>
-<li><a href="http://workshops.thoughtbot.com/backbone-js-on-rails">Backbone on Rails eBook by thoughtbot</a></li>
+<li><a href="http://workshops.thoughtbot.com/backbone-js-on-rails">Backbone on Rails eBook</a></li>
 <li><a href="http://peepcode.com/products/backbone-js">Peepcode episodes on Backbone</a></li>
-<li><a href="mailto:jason.p.morrison@gmail.com">jason.p.morrison@gmail.com</a></li>
-<li><a href="http://jayunit.net">http://jayunit.net</a></li>
 </ul></section>
             
           </div>
@@ -1798,7 +2129,49 @@ body.presenter_view div#current_presenter_notes section {
             </aside>
             
             <aside class="page_number">
-              13/13
+              23/24
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Thanks!</h1></header>
+            
+            
+            <section><ul>
+<li>Me:<ul>
+<li><a href="mailto:jason.p.morrison@gmail.com">jason.p.morrison@gmail.com</a></li>
+<li><a href="http://twitter.com/jayunit">@jayunit</a></li>
+<li><a href="http://jayunit.net">http://jayunit.net</a></li>
+</ul>
+</li>
+<li>Slides:<ul>
+<li><a href="http://jayunit.net/backbone-js-on-rails-talk">View slides online</a></li>
+<li><a href="http://github.com/jasonm/backbone-js-on-rails-talk">View slides source on GitHub</a></li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/index.md">slides/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              24/24
             </aside>
           </footer>
         </div>
@@ -1825,19 +2198,19 @@ body.presenter_view div#current_presenter_notes section {
       
       
       <tr id="toc-row-3">
-        <th><a href="#slide3">More client side</a></th>
+        <th><a href="#slide3">Apps shifting client-side</a></th>
         <td><a href="#slide3">3</a></td>
       </tr>
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4">Organize your code</a></th>
+        <th><a href="#slide4">Organize your JavaScript</a></th>
         <td><a href="#slide4">4</a></td>
       </tr>
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">But which one?</a></th>
+        <th><a href="#slide5">But which framework?</a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
@@ -1861,32 +2234,98 @@ body.presenter_view div#current_presenter_notes section {
       
       
       <tr id="toc-row-9">
-        <th><a href="#slide9">Code tour: client side</a></th>
+        <th><a href="#slide9">Walk through a request</a></th>
         <td><a href="#slide9">9</a></td>
       </tr>
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">Code tour: server side</a></th>
+        <th><a href="#slide10">Walk through a request</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
       
       <tr id="toc-row-11">
-        <th><a href="#slide11">More advanced topics</a></th>
+        <th><a href="#slide11">Code tour: client side</a></th>
         <td><a href="#slide11">11</a></td>
       </tr>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Further reading</a></th>
+        <th><a href="#slide12">Code tour: server side</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
       
       <tr id="toc-row-13">
-        <th><a href="#slide13">Links</a></th>
+        <th><a href="#slide13">Bonus stuff!</a></th>
         <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Testing</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Testing</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">Testing</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">Testing</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">Testing</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">pushState</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Push synchronization</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21">Get your code on</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22">Further reading: Books on JavaScript</a></th>
+        <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23">Further reading: Online resources</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Thanks!</a></th>
+        <td><a href="#slide24">24</a></td>
       </tr>
       
       
