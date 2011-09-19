@@ -62,7 +62,9 @@ How much JS?
 * Backbone: Small, pragmatic, extracted from DocumentCloud
 
 ---
+# Backbone.js
 
+---
 # Moving parts
 
 * History
