@@ -1,7 +1,19 @@
 # Backbone.js on Rails
 
+# Presenter Notes
+
+* Presenter introduction
+* Hands up: Ruby, Rails, JavaScript, web apps, csmvc
+
 ---
-# Goals for this talk
+# This talk
+
+* Client-side frameworks
+* Moving parts of Backbone
+* Example
+* Code dive
+* Bonus topics
+* Resources
 
 # Presenter Notes
 
@@ -12,29 +24,27 @@
 * Know how to add Backbone to a new or existing Rails app
 
 ---
-# Apps shifting client-side
+# Web apps shifting client-side
 
 # Presenter Notes
 
-These days, some web apps have more code on the client than on the server.
+* These days, some web apps have more code on the client than on the server.
+* Who is seeing these trends?  What are you doing about it?
+* How much JS?
 
-Learn how Backbone.js is put together, how to use it with Rails, and how to make building JavaScript-heavy apps a pleasure.
-
-How much JS?
-
-* Airbrake: Almost 0
-* Copycopter: 30%
-* Trajectory 41%
-* IoraHealth: 62%
-* Substance.io: 100%
+    * Airbrake: Almost 0
+    * Copycopter: 30%
+    * Trajectory 41%
+    * IoraHealth: 62%
+    * Substance.io: 100%
 
 ---
 # Organize your JavaScript
 
 # Presenter Notes
 
-* Hands up: Procedural apps? Tag-soup PHP/JSP/whatever-SP?  Now, framework?
-* Antipatterns: Deeply nested callbacks, app data stored in the DOM
+* Server cause & antipatterns: Req/response (CGI, EHTML) -> procedural & tag soup *SP.
+* Client cause & antipatterns: Async ($) -> Deeply nested callbacks (if-like), Stateful (DOM) -> app data stored in the DOM.
 * Patterns for organization.  MVC is one.  Good for GUI.
 * MVC over HTTP is often stateless.  Some state maintained with session
 * MVC in GUI is stateful.  Embrace this.
@@ -60,7 +70,7 @@ How much JS?
 * Batman: Node server, share models, data-bind templates
 * JavaScriptMVC: Larger, older, generators, dep mgmt, builds, testing, jQuery-based-and-like, JSON/REST transport
 * Spine.js: Very similar.  Even smaller.  Coffee.  Fully async, client rules.
-* Backbone: Small, pragmatic, extracted from DocumentCloud
+* Backbone: Small, readable, intended for modification, extracted from DocumentCloud
 
 ---
 # Backbone.js
@@ -81,7 +91,7 @@ How much JS?
 
 * History - Handles hashchange, pushstate, BB.history.start()
 * Router - read fragment, dispatch to action
-* View - Root DOM `el`, class/id/tagName, `this.$`, `events`, `$.delegate`, any templating
+* View - Takes model data, presents in DOM.  Binds to DOM events, triggers app logic.  1:1 `el`, `this.$`, `events`, `$.delegate`, templating
 * Model - Conversions, computed properties, validations, access control, events change/change:attr,destroy,error
 * Collection - Ordered set of models.  URL, fetch(), reset(json), _.methods, comparator, events reset/add/remove/all model events
 * Sync - Encapsulation of persistence. Default `$.ajax` to RESTful JSON API.  Designed for override, global or per-class.
@@ -100,8 +110,8 @@ How much JS?
 ---
 # Walk through a request
 
-* URI: `/projects/oss/stories#84245`
-* `GET /projects/oss/stories`
+* URI: `/projects/oss/stories/#1`
+* `GET /projects/oss/stories/`
 * Rails response: HTML, `<script>`s, JSON
 
 ---
@@ -114,31 +124,20 @@ How much JS?
 ---
 # Walk through a request
 
-* Route `'#84245'` fragment
+* Route `'#1/issues/1'` fragment
 * Dispatch to action
 * `new View(modelOrCollection)`
 * event and data bindings
 * `view.render()`
 * `_.template()`
-* `$('#app').html(theViewHtmls)`
+* `$('#some-elem').html(someHtml)`
 
 ---
-# Code tour: client side
+# Rails integration
 
-# Presenter Notes
-
-* Back to front.
-    * Script load
-    * JSON collection bootstrapping
-    * Init -> Backbone.history.start()
-    * Routing
-    * View class
-    * Models and collections
-    * Templating
-    * Underscore.js.  Mixed into collections.
-
----
-# Code tour: server side
+* File organization
+* JSON API
+* CSRF
 
 # Presenter Notes
 
@@ -224,7 +223,7 @@ How much JS?
 * [Backbone on the server with node.js](http://andyet.net/blog/2011/feb/15/re-using-backbonejs-models-on-the-server-with-node/)... with DNode or NowJS (?!)
 
 ---
-# Almost Q&A time!
+# Resources
 
 ---
 # Get your code on
@@ -250,6 +249,16 @@ How much JS?
 * [Backbone Google Group](https://groups.google.com/group/backbonejs)
 * [Backbone on Rails eBook](http://workshops.thoughtbot.com/backbone-js-on-rails?utm_source=jm-talk)
 * [Peepcode episodes on Backbone](http://peepcode.com/products/backbone-js)
+
+---
+# Recap
+
+* Client-side frameworks
+* Moving parts of Backbone
+* Example
+* Code dive
+* Bonus topics
+* Resources
 
 ---
 # Thanks!
