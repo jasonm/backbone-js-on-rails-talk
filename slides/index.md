@@ -223,6 +223,9 @@ How much JS?
 * [Backbone on the server with node.js](http://andyet.net/blog/2011/feb/15/re-using-backbonejs-models-on-the-server-with-node/)... with DNode or NowJS (?!)
 
 ---
+# Almost Q&A time!
+
+---
 # Get your code on
 
 * [Todo App example](http://documentcloud.github.com/backbone/#examples-todos)
@@ -240,9 +243,11 @@ How much JS?
 ---
 # Further reading: Online resources
 
-* [Official Backbone docs](http://documentcloud.github.com/backbone/) - they're excellent!
+* [Official Backbone docs](http://documentcloud.github.com/backbone/)
+* [Annotated source code](http://documentcloud.github.com/backbone/docs/backbone.html)
+* [Underscore docs](http://documentcloud.github.com/underscore/) and [source](http://documentcloud.github.com/underscore/docs/underscore.html)
 * [Backbone Google Group](https://groups.google.com/group/backbonejs)
-* [Backbone on Rails eBook](http://workshops.thoughtbot.com/backbone-js-on-rails)
+* [Backbone on Rails eBook](http://workshops.thoughtbot.com/backbone-js-on-rails?utm_source=jm-talk)
 * [Peepcode episodes on Backbone](http://peepcode.com/products/backbone-js)
 
 ---
@@ -250,7 +255,8 @@ How much JS?
 
 * Me:
     * [jason.p.morrison@gmail.com](mailto:jason.p.morrison@gmail.com)
-    * [@jayunit](http://twitter.com/jayunit)
+    * [http://twitter.com/jayunit](http://twitter.com/jayunit)
+    * [http://github.com/jasonm](http://github.com/jasonm)
     * [http://jayunit.net](http://jayunit.net)
 * Slides:
     * [View slides online](http://jayunit.net/backbone-js-on-rails-talk)
