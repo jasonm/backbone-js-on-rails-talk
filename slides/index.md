@@ -34,6 +34,7 @@ How much JS?
 # Presenter Notes
 
 * Hands up: Procedural apps? Tag-soup PHP/JSP/whatever-SP?  Now, framework?
+* Antipatterns: Deeply nested callbacks, app data stored in the DOM
 * Patterns for organization.  MVC is one.  Good for GUI.
 * MVC over HTTP is often stateless.  Some state maintained with session
 * MVC in GUI is stateful.  Embrace this.
