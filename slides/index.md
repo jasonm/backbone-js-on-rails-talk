@@ -203,8 +203,7 @@
 
 # Presenter Notes
 
-* Look at github.
-* Opt-in.
+* GitHub's source browser uses it with [pjax](https://github.com/defunkt/jquery-pjax)
 * `Backbone.history.start({pushState: true});`
 * Server-side support.
 
