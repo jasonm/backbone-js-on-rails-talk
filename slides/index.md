@@ -1,5 +1,7 @@
 # Backbone.js on Rails
 
+(This is an HTML slide deck.  Press "h" for help, or use the arrow keys to navigate.  Press "p" for presenter notes, where you'll find a bunch of links, especially towards the end.)
+
 # Presenter Notes
 
 * Presenter introduction
