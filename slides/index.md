@@ -1,10 +1,26 @@
 # Backbone.js on Rails
 
-(This is an HTML slide deck.  Press "h" for help, or use the arrow keys to navigate.  Press "p" for presenter notes, where you'll find a bunch of links, especially towards the end.)
+(This is an HTML slide deck. Press "h" for help, or use the arrow keys to navigate. Press "p" for presenter notes, where you'll find a bunch of links, especially towards the end.)
+
 
 # Presenter Notes
 
-* Presenter introduction
+---
+# Web apps shifting client-side
+
+
+
+# Presenter Notes
+
+* These days, some web apps have more code on the client than on the server.
+* Who is seeing these trends?  What are you doing about it?
+* How much JS?
+
+    * Airbrake: Almost 0
+    * Copycopter: 30%
+    * Trajectory 41%
+    * IoraHealth: 62%
+
 * Hands up: Ruby, Rails, JavaScript, web apps, csmvc
 
 ---
@@ -26,30 +42,17 @@
 * Know how to add Backbone to a new or existing Rails app
 
 ---
-# Web apps shifting client-side
-
-# Presenter Notes
-
-* These days, some web apps have more code on the client than on the server.
-* Who is seeing these trends?  What are you doing about it?
-* How much JS?
-
-    * Airbrake: Almost 0
-    * Copycopter: 30%
-    * Trajectory 41%
-    * IoraHealth: 62%
-    * Substance.io: 100%
-
----
 # Organize your JavaScript
 
 # Presenter Notes
 
-* Server cause & antipatterns: Req/response (CGI, EHTML) -> procedural & tag soup *SP.
-* Client cause & antipatterns: Async ($) -> Deeply nested callbacks (if-like), Stateful (DOM) -> app data stored in the DOM.
+* Where do frameworks come from?
+* Paradigm -> path-least-resistance -> implementation -> architecture -> technical debt
+* Server: Req/response (CGI, EHTML) -> procedural & tag soup *SP.
+* Client: Async ($) -> Deeply nested callbacks (if-like), Stateful (DOM) -> app data stored in the DOM.
 * Patterns for organization.  MVC is one.  Good for GUI.
 * MVC over HTTP is often stateless.  Some state maintained with session
-* MVC in GUI is stateful.  Embrace this.
+* CS-MVC in GUI is stateful.  THIS IS OKAY!
 
 ---
 # But which framework?
@@ -104,31 +107,21 @@
 ---
 # Example
 
+* http://backbonechat.herokuapp.com
+* https://github.com/jasonm/chat_app
+
 # Presenter Notes
 
-* Trajectory on local
-* stories#index
-
----
-# Walk through a request
-
+* https://github.com/jasonm/chat_app
 * URI: `/projects/oss/stories/#1`
 * `GET /projects/oss/stories/`
 * Rails response: HTML, `<script>`s, JSON
-
----
-# Walk through a request
-
 * Bootstrap collections
 * Instantiate router
 * `Backbone.history.start()`
-
----
-# Walk through a request
-
-* Route `'#1/issues/1'` fragment
-* Dispatch to action
-* `new View(modelOrCollection)`
+* Route fragment
+* Dispatch to backbone action
+* Create view
 * event and data bindings
 * `view.render()`
 * `_.template()`
@@ -148,7 +141,7 @@
     * File organization for 3.1: Asset pipeline, [`rails-backbone` gem](https://github.com/codebrew/backbone-rails)
     * JSON APIs
         * [`ActiveRecord.include_root_in_json`](https://github.com/jasonm/wizards/blob/master/config/initializers/wrap_parameters.rb)
-        * Rails 3.1 [Params Wrapper](https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/params_wrapper.rb)
+        * Rails 3.1 [Params Wrapper](https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/params_wrapper.rb) / wrap_parameters
         * Model#as_json probably isnt the best place for presentation: Presenter object, [rabl](https://github.com/nesquena/rabl)
     * [CSRF Token](https://github.com/codebrew/backbone-rails/blob/master/vendor/assets/javascripts/backbone_rails_sync.js#L26-27)
 
@@ -165,22 +158,12 @@
 ---
 # Testing
 
---- 
-# Testing
-* It's just JavaScript!
 # Presenter Notes
-* Yes it's just JavaScript.
-* But...
 
---- 
-# Testing
-* It's just **stateful and asynchronous business and presentation logic written in** JavaScript!
-# Presenter Notes
-* Luckily...
-
---- 
-# Testing
-* It's just stateful and asynchronous business and presentation logic written in **modular, decoupled** JavaScript!
+* Business and presentation logic
+* Stateful
+* Asynchronous
+* Modular, decoupled JS
 
 ---
 # Testing
@@ -244,11 +227,11 @@
 ---
 # Further reading: Online resources
 
+* [Backbone on Rails eBook](http://workshops.thoughtbot.com/backbone-js-on-rails?utm_source=jm-talk)
 * [Official Backbone docs](http://documentcloud.github.com/backbone/)
 * [Annotated source code](http://documentcloud.github.com/backbone/docs/backbone.html)
 * [Underscore docs](http://documentcloud.github.com/underscore/) and [source](http://documentcloud.github.com/underscore/docs/underscore.html)
 * [Backbone Google Group](https://groups.google.com/group/backbonejs)
-* [Backbone on Rails eBook](http://workshops.thoughtbot.com/backbone-js-on-rails?utm_source=jm-talk)
 * [Peepcode episodes on Backbone](http://peepcode.com/products/backbone-js)
 
 ---
@@ -267,8 +250,9 @@
 * Me:
     * [jason.p.morrison@gmail.com](mailto:jason.p.morrison@gmail.com)
     * [http://twitter.com/jayunit](http://twitter.com/jayunit)
-    * [http://github.com/jasonm](http://github.com/jasonm)
     * [http://jayunit.net](http://jayunit.net)
 * Slides:
     * [View slides online](http://jayunit.net/backbone-js-on-rails-talk)
     * [View slides source on GitHub](http://github.com/jasonm/backbone-js-on-rails-talk)
+* Code:
+    * [View chat app source on GitHub](http://github.com/jasonm/chat_app)
